@@ -331,6 +331,7 @@
 4610 NEXT
 4660 SETSTDIO 0
 4680 RETURN
+' Конец процедуры получение данных с весов
 5000 PART: 
 5010 OPEN "console:" FOR OUTPUT AS 3
 5020 PRINT #3 : PRINT #3
