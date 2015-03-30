@@ -10,6 +10,7 @@
 80 SETSTDIO 0
 100 A$=INKEY$
 101 PRINT " VES= "+W3$
+'Если нажата клавиша "Стрелка вниз" - переход на процедуру номер партии, строка 5000
 119 IF ASC(A$)=4 THEN GOSUB PART
 120 IF (ASC(A$)=132) AND (FL%=1) THEN GOSUB OTCHETVIG 
 121 IF ASC(A$)=136 THEN GOSUB OTCHETSBR
@@ -297,6 +298,7 @@
 4250 WEND
 4260 CLOSE 11
 4270 RETURN
+' Процедура получения данных с весов
 4500 VWEIGHT: 
 4501 DTA$="" : WEIGHT$="" : W3$="" : NE$="" : NESUM$="" : SETSTDIO 1
 4506 OPEN "uart1:" FOR OUTPUT AS 12
@@ -307,8 +309,11 @@
 4528 PRINT #3, MID$(DTA$,10,10)
 4529 CLOSE 3
 4530 IF LEN(DTA$)<22 THEN GOTO 4526
+' Отбрасывание сотых веса, округление до десятых
 '4590 WEIGHT$=MID$(DTA$,10,7)
+' Получение полной информации о весе, только до сотых грамма
 4590 WEIGHT$=MID$(DTA$,10,8)
+' Получение значения веса из входящей строки с весов в КГ
 4591 FOR I%=1 TO LEN(WEIGHT$) STEP 1
 4592 IF MID$(WEIGHT$,I%,1)<>" " THEN W3$=W3$+MID$(WEIGHT$,I%,1)
 4593 NEXT
