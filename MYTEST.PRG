@@ -157,19 +157,20 @@
 2806 FONT "Arial",8,0,100
 2808 PRPOS 21,200
 2810 PRTXT DT$
-'2830 W3SUM$=FLOATCALC$(W3SUM$,"*",1000)
 2850 DIR 1 : ALIGN 8 : CLIP BARCODE ON
 2851 PRPOS 225,100
 2852 BARTYPE "EAN13"
 2853 BARHEIGHT 50
 2854 BARMAG 3
 2855 BARFONT "Swiss 721 BT",10,0,1,1,1,100 ON
-2856 FOR I%=1 TO LEN(W3SUM$) STEP 1
-2857 IF MID$(W3SUM$,I%,1)<>" " AND MID$(W3SUM$,I%,1)<>"." AND MID$(W3SUM$,I%,1)<>"-" THEN W1$=W1$+MID$(W3SUM$,I%,1)
+'2856 FOR I%=1 TO LEN(W3SUM$) STEP 1
+'2857 IF MID$(W3SUM$,I%,1)<>" " AND MID$(W3SUM$,I%,1)<>"." AND MID$(W3SUM$,I%,1)<>"-" THEN W1$=W1$+MID$(W3SUM$,I%,1)
+'2858 NEXT
+'Доработка значений веса для штрих кода, почему то до этого суммировался вес продукта для 2 и более этикеток
+2856 FOR I%=1 TO LEN(NE$) STEP 1
+2857 IF MID$(NE$,I%,1)<>" " AND MID$(NE$,I%,1)<>"," AND MID$(NE$,I%,1)<>"-" THEN W1$=W1$+MID$(NE$,I%,1)
 2858 NEXT
 2890 W2$="00000"
-'Добавление 0 для получения веса в штрих-коде в граммах
-'2891 W2$=W2$+W1$+"0"
 2891 W2$=W2$+W1$
 2894 W2$=RIGHT$(W2$,5)
 2896 PNAME6$=PNAME6$+"0000000"
