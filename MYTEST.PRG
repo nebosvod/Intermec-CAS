@@ -213,7 +213,8 @@
 2956 NASC 1251
 2957 FONT "Arial",7,0,100
 2958 PRPOS 320,140
-2959 WE$=FLOATCALC$(W3SUM$,"+",PNAME4$,1)
+' Исправил  с 1 на 3 для веса в тясячных
+2959 WE$=FLOATCALC$(W3SUM$,"+",PNAME4$,3)
 2960 WE1$=""
 2961 FOR I%=1 TO LEN(WE$) STEP 1
 2962 I1$=MID$(WE$,I%,1)
@@ -339,13 +340,15 @@
 '4590 WEIGHT$=MID$(DTA$,10,7)
 ' Получение полной информации о весе, только до сотых грамма
 4590 WEIGHT$=MID$(DTA$,10,8)
+' Добавление нуля для получения веса с весов в тысячных
+4591 WEIGHT$=WEIGHT$ + "0"
 ' Получение значения веса из входящей строки с весов в КГ
-4591 FOR I%=1 TO LEN(WEIGHT$) STEP 1
-4592 IF MID$(WEIGHT$,I%,1)<>" " THEN W3$=W3$+MID$(WEIGHT$,I%,1)
-4593 NEXT
+4592 FOR I%=1 TO LEN(WEIGHT$) STEP 1
+4593 IF MID$(WEIGHT$,I%,1)<>" " THEN W3$=W3$+MID$(WEIGHT$,I%,1)
+4594 NEXT
 '4594 W3SUM$=FLOATCALC$(W3SUM$,"+",W3$,1)
 'Сумма значений, "3" - количество знаков после запятой
-4594 W3SUM$=FLOATCALC$(W3SUM$,"+",W3$,3)
+4595 W3SUM$=FLOATCALC$(W3SUM$,"+",W3$,3)
 4596 FOR I%=1 TO LEN(W3$) STEP 1
 4597 I1$=MID$(W3$,I%,1)
 4598 IF I1$="." THEN I1$=","
@@ -356,6 +359,9 @@
 4606 IF I1$="." THEN I1$=","
 4608 NESUM$=NESUM$+I1$
 4610 NEXT
+'Вывод веса в консоль
+4620 OPEN "console:" FOR OUTPUT AS 55
+4630 PRINT #55, LEFT$(NE$,16) : PRINT #55, LEFT$(W3$,16);
 4660 SETSTDIO 0
 4680 RETURN
 ' Конец процедуры получение данных с весов
