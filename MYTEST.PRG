@@ -170,8 +170,10 @@
 2856 FOR I%=1 TO LEN(NE$) STEP 1
 2857 IF MID$(NE$,I%,1)<>" " AND MID$(NE$,I%,1)<>"," AND MID$(NE$,I%,1)<>"-" THEN W1$=W1$+MID$(NE$,I%,1)
 2858 NEXT
-2890 W2$="00000"
-2891 W2$=W2$+W1$
+2859 IF PNAME8$="1" THEN W1$=W1$+"00"
+2860 IF PNAME8$="2" THEN W1$=W1$+"0"
+2892 W2$="00000"
+2893 W2$=W2$+W1$
 2894 W2$=RIGHT$(W2$,5)
 2896 PNAME6$=PNAME6$+"0000000"
 2897 PNAME6$=LEFT$(PNAME6$,7)
@@ -336,13 +338,20 @@
 4527 OPEN "console:" FOR OUTPUT AS 3
 4528 PRINT #3, MID$(DTA$,10,10)
 4529 CLOSE 3
-4530 IF LEN(DTA$)<22 THEN GOTO 4526
+4540 IF LEN(DTA$)<22 THEN GOTO 4526
+4545 IF PNAME8$="1" THEN
 ' Отбрасывание сотых веса, округление до десятых
-'4590 WEIGHT$=MID$(DTA$,10,7)
+4550 WEIGHT$=MID$(DTA$,10,7)
+4560 END IF
+4570 IF PNAME8$="2" THEN
 ' Получение полной информации о весе, только до сотых грамма
-4590 WEIGHT$=MID$(DTA$,10,8)
+4575 WEIGHT$=MID$(DTA$,10,8)
+4580 END IF
+4585 IF PNAME8$="3" THEN
+4587 WEIGHT$=MID$(DTA$,10,8)
 ' Добавление нуля для получения веса с весов в тысячных
-4591 WEIGHT$=WEIGHT$ + "0"
+4588 WEIGHT$=WEIGHT$ + "0"
+4589 END IF
 ' Получение значения веса из входящей строки с весов в КГ
 4592 FOR I%=1 TO LEN(WEIGHT$) STEP 1
 4593 IF MID$(WEIGHT$,I%,1)<>" " THEN W3$=W3$+MID$(WEIGHT$,I%,1)
