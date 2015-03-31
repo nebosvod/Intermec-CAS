@@ -15,10 +15,10 @@
 'Если нажата клавиша "Стрелка влево" - переход на процедуру наименование, строка 5400
 'Если нажата клавиша "Стрелка вправо" - переход на процедуру даты выработки, строка 5610
 'Если нажата клавиша "I" - переход на процедуру выгрузки, строка 6158
-'Если нажата клавиша "Setup" - переход на процедуру сброса специфиыкации, строка 6220
+'Если нажата клавиша "Setup" - переход на процедуру запроса сброса спецификации, строка 4700
 119 IF ASC(A$)=4 THEN GOSUB PART
 120 IF ASC(A$)=5 THEN GOSUB OTCHETVIG 
-121 IF ASC(A$)=29 THEN GOSUB OTCHETSBR
+121 IF ASC(A$)=29 THEN GOSUB REQSBRSP
 123 IF ASC(A$)=2 THEN GOSUB WDATA
 124 IF ASC(A$)=1 THEN GOSUB WNAME
 125 IF ASC(A$)=31 THEN GOSUB DISP
@@ -357,6 +357,17 @@
 4660 SETSTDIO 0
 4680 RETURN
 ' Конец процедуры получение данных с весов
+' Процедура запроса удаления спецификации
+4700 REQSBRSP:
+4710 OPEN "console:" FOR OUTPUT AS 55
+4720 PRINT #55, LEFT$("DELETE ?",16) : PRINT #55, LEFT$("YES=ENTER, C=NO",16);
+4730 D$=INKEY$
+4735 IF D$ = "" GOTO 4730
+4740 IF ASC(D$)=13 THEN GOSUB OTCHETSBR 
+4750 IF ASC(D$)=8 THEN GOTO 4760
+4760 CLOSE 55
+4800 RETURN
+' Конец процедуры запроса удаления спецификации
 5000 PART: 
 5010 OPEN "console:" FOR OUTPUT AS 3
 5020 PRINT #3 : PRINT #3
@@ -509,7 +520,7 @@
 6246 OPEN "otchetno.txt" FOR OUTPUT AS 44
 6248 PRINT #44, STR$(OTCH%)+CHR$(13)
 6250 CLOSE 44
-6252 RETURN
+6352 RETURN
 9000 EN: 
 9010 SETSTDIO 100
 9020 OPEN "console:" FOR OUTPUT AS 10
