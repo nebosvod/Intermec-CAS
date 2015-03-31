@@ -14,7 +14,7 @@
 'Если нажата клавиша "Стрелка вверх" - переход на процедуру даты изготовления, строка 5200
 'Если нажата клавиша "Стрелка влево" - переход на процедуру наименование, строка 5400
 119 IF ASC(A$)=4 THEN GOSUB PART
-120 IF (ASC(A$)=132) AND (FL%=1) THEN GOSUB OTCHETVIG 
+120 IF ASC(A$)=5 THEN GOSUB OTCHETVIG 
 121 IF ASC(A$)=136 THEN GOSUB OTCHETSBR
 123 IF ASC(A$)=2 THEN GOSUB WDATA
 124 IF ASC(A$)=1 THEN GOSUB WNAME
