@@ -144,7 +144,8 @@ begin
 if (not FileExists('C:\plues.txt')) then  begin
      AssignFile(f1,'C:\plues.txt');
      rewrite(f1);
-     writeln(f1,'');
+     //writeln(f1,'');
+     //Добавлялся перенос строки при создании файла, зачем - не понятно
      closefile(f1);
 end;
 
@@ -211,6 +212,7 @@ l2:
    writeln(f3,'KODTOV='+edit8.text);
    writeln(f3,'TOCHNOST='+edit8.text);
    //пробегаю старую инфу:
+   readln(f1,kk);
    readln(f1,kk);
    readln(f1,kk);
    readln(f1,kk);
