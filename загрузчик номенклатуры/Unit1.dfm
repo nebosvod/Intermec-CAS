@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 192
+  Left = 214
   Top = 114
   Width = 692
-  Height = 367
+  Height = 432
   Caption = #1079#1072#1075#1088#1091#1079#1095#1080#1082
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -78,9 +78,27 @@ object Form1: TForm1
     Caption = #1053#1086#1084#1077#1088' PLU:'
     Visible = False
   end
+  object Label9: TLabel
+    Left = 16
+    Top = 240
+    Width = 101
+    Height = 13
+    Hint = '1 - '#1076#1086' '#1076#1077#1089#1103#1090#1099#1093', 2 - '#1076#1086' '#1089#1086#1090#1099#1093', 3 - '#1076#1086' '#1090#1099#1089#1103#1095#1085#1099#1093
+    Caption = #1058#1086#1095#1085#1086#1089#1090#1100' '#1074#1077#1089#1072' (1-3):'
+    ParentShowHint = False
+    ShowHint = True
+    Visible = False
+  end
+  object Label10: TLabel
+    Left = 24
+    Top = 264
+    Width = 38
+    Height = 13
+    Caption = 'Label10'
+  end
   object Button1: TButton
     Left = 280
-    Top = 272
+    Top = 344
     Width = 153
     Height = 57
     Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100' '#1085#1072' PM4i'
@@ -96,7 +114,7 @@ object Form1: TForm1
   end
   object Button2: TButton
     Left = 280
-    Top = 240
+    Top = 312
     Width = 153
     Height = 25
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1074' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082
@@ -180,7 +198,7 @@ object Form1: TForm1
     OnKeyPress = Edit2KeyPress
   end
   object Button3: TButton
-    Left = 520
+    Left = 544
     Top = 8
     Width = 121
     Height = 25
@@ -188,8 +206,16 @@ object Form1: TForm1
     TabOrder = 11
     OnClick = Button3Click
   end
+  object Edit9: TEdit
+    Left = 124
+    Top = 237
+    Width = 541
+    Height = 21
+    TabOrder = 12
+    Visible = False
+  end
   object TcpClient1: TTcpClient
-    Left = 648
+    Left = 480
     Top = 8
   end
 end

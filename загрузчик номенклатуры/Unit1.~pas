@@ -89,6 +89,7 @@ TCPClient1.Sendln(kk);
   TCPClient1.Sendln(kk);
   end else//if  TCPClient1.Connected
   showmessage('неверный IP');
+  TCPClient1.Close;
 end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
