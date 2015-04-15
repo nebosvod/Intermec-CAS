@@ -32,6 +32,11 @@ type
     Label9: TLabel;
     Edit9: TEdit;
     Label10: TLabel;
+    Edit10: TEdit;
+    Label11: TLabel;
+    Edit11: TEdit;
+    Label12: TLabel;
+    Edit12: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -183,8 +188,15 @@ if MessageBox(Form1.Handle, PChar('Товар существует. Заменить?'), '',
      writeln(f1,kk);
      kk:= 'KODTOV='+edit8.Text;
      writeln(f1,kk);
+     kk:= 'NAMEORG='+edit11.Text;
+     writeln(f1,kk);
      kk:= 'TOCHNOST='+edit9.Text;
      writeln(f1,kk);
+     kk:= 'OKRUGLENIE='+edit10.Text;
+     writeln(f1,kk);
+     kk:= 'USUSHKA='+edit12.Text;
+     writeln(f1,kk);
+
 
      closefile(f1);
      
@@ -210,8 +222,14 @@ l2:
    writeln(f3,'VESKOR='+edit6.text);
    writeln(f3,'INTERVAL='+edit7.text);
    writeln(f3,'KODTOV='+edit8.text);
-   writeln(f3,'TOCHNOST='+edit8.text);
+   writeln(f3,'NAMEORG='+edit11.text);
+   writeln(f3,'TOCHNOST='+edit9.text);
+   writeln(f3,'OKRUGLENIE='+edit10.text);
+   writeln(f3,'USUSHKA='+edit12.text);
    //пробегаю старую инфу:
+   readln(f1,kk);
+   readln(f1,kk);
+   readln(f1,kk);
    readln(f1,kk);
    readln(f1,kk);
    readln(f1,kk);
@@ -242,6 +260,9 @@ l3: // выхожу...
      label7.Visible:=false;
      label8.Visible:=false;
      label9.Visible:=false;
+     label10.Visible:=false;
+     label11.Visible:=false;
+     label12.Visible:=false;
 
      edit2.Visible:=false;
      edit3.Visible:=false;
@@ -251,6 +272,9 @@ l3: // выхожу...
      edit7.Visible:=false;
      edit8.Visible:=false;
      edit9.Visible:=false;
+     edit10.Visible:=false;
+     edit11.Visible:=false;
+     edit12.Visible:=false;
 
      button1.Visible:=true;
 
@@ -269,6 +293,9 @@ begin
      label7.Visible:=true;
      label8.Visible:=true;
      label9.Visible:=true;
+     label10.Visible:=true;
+     label11.Visible:=true;
+     label12.Visible:=true;
 
      edit2.Visible:=true;
      edit3.Visible:=true;
@@ -278,6 +305,9 @@ begin
      edit7.Visible:=true;
      edit8.Visible:=true;
      edit9.Visible:=true;
+     edit10.Visible:=true;
+     edit11.Visible:=true;
+     edit12.Visible:=true;
 
      button2.Visible:=true;
      button1.Visible:=false;
@@ -291,6 +321,9 @@ begin
      label7.Visible:=false;
      label8.Visible:=false;
      label9.Visible:=false;
+     label10.Visible:=false;
+     label11.Visible:=false;
+     label12.Visible:=false;
 
      edit2.Visible:=false;
      edit3.Visible:=false;
@@ -299,7 +332,10 @@ begin
      edit6.Visible:=false;
      edit7.Visible:=false;
      edit8.Visible:=false;
-     edit9.Visible:=true;
+     edit9.Visible:=false;
+     edit10.Visible:=false;
+     edit11.Visible:=false;
+     edit12.Visible:=false;
 
      button2.Visible:=false;
      button1.Visible:=true;

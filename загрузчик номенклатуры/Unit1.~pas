@@ -145,6 +145,7 @@ if (not FileExists('C:\plues.txt')) then  begin
      AssignFile(f1,'C:\plues.txt');
      rewrite(f1);
      //writeln(f1,'');
+     //Добавлялся перенос строки при создании файла, зачем - не понятно
      closefile(f1);
 end;
 
