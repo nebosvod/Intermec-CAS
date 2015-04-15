@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 214
   Top = 114
   Width = 692
-  Height = 432
+  Height = 459
   Caption = #1079#1072#1075#1088#1091#1079#1095#1080#1082
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -80,7 +80,7 @@ object Form1: TForm1
   end
   object Label9: TLabel
     Left = 16
-    Top = 240
+    Top = 268
     Width = 101
     Height = 13
     Hint = '1 - '#1076#1086' '#1076#1077#1089#1103#1090#1099#1093', 2 - '#1076#1086' '#1089#1086#1090#1099#1093', 3 - '#1076#1086' '#1090#1099#1089#1103#1095#1085#1099#1093
@@ -90,15 +90,35 @@ object Form1: TForm1
     Visible = False
   end
   object Label10: TLabel
-    Left = 24
-    Top = 264
-    Width = 38
+    Left = 16
+    Top = 295
+    Width = 114
     Height = 13
-    Caption = 'Label10'
+    Hint = '0 - '#1073#1077#1079' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1103', 1 - '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084
+    Caption = #1054#1082#1088#1091#1075#1083#1077#1085#1080#1077' '#1074#1077#1089#1072' (0-1):'
+    ParentShowHint = False
+    ShowHint = True
+    Visible = False
+  end
+  object Label11: TLabel
+    Left = 16
+    Top = 240
+    Width = 147
+    Height = 13
+    Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1080':'
+    Visible = False
+  end
+  object Label12: TLabel
+    Left = 16
+    Top = 320
+    Width = 42
+    Height = 13
+    Caption = #1059#1089#1091#1096#1082#1072':'
+    Visible = False
   end
   object Button1: TButton
-    Left = 280
-    Top = 344
+    Left = 384
+    Top = 352
     Width = 153
     Height = 57
     Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100' '#1085#1072' PM4i'
@@ -113,10 +133,10 @@ object Form1: TForm1
     TabOrder = 1
   end
   object Button2: TButton
-    Left = 280
-    Top = 312
+    Left = 144
+    Top = 352
     Width = 153
-    Height = 25
+    Height = 57
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1074' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082
     TabOrder = 2
     Visible = False
@@ -208,11 +228,34 @@ object Form1: TForm1
   end
   object Edit9: TEdit
     Left = 124
-    Top = 237
+    Top = 265
     Width = 541
     Height = 21
     TabOrder = 12
     Visible = False
+  end
+  object Edit10: TEdit
+    Left = 135
+    Top = 292
+    Width = 530
+    Height = 21
+    TabOrder = 13
+    Visible = False
+  end
+  object Edit11: TEdit
+    Left = 167
+    Top = 238
+    Width = 498
+    Height = 21
+    TabOrder = 14
+    Visible = False
+  end
+  object Edit12: TEdit
+    Left = 63
+    Top = 317
+    Width = 602
+    Height = 21
+    TabOrder = 15
   end
   object TcpClient1: TTcpClient
     Left = 480

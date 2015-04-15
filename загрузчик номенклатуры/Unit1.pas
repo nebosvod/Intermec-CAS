@@ -46,6 +46,7 @@ type
     procedure Edit7KeyPress(Sender: TObject; var Key: Char);
     procedure Edit2KeyPress(Sender: TObject; var Key: Char);
     procedure Edit8KeyPress(Sender: TObject; var Key: Char);
+    procedure Edit9KeyPress(Sender: TObject; var Key: Char);
     procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
@@ -360,6 +361,11 @@ end;
 procedure TForm1.Edit8KeyPress(Sender: TObject; var Key: Char);
 begin
  edit8.MaxLength:=9;
+end;
+
+procedure TForm1.Edit9KeyPress(Sender: TObject; var Key: Char);
+begin
+ edit9.MaxLength:=1;
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);

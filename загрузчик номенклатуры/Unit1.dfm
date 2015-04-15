@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 214
-  Top = 114
+  Left = 465
+  Top = 206
   Width = 692
   Height = 459
   Caption = #1079#1072#1075#1088#1091#1079#1095#1080#1082
@@ -256,6 +256,7 @@ object Form1: TForm1
     Width = 602
     Height = 21
     TabOrder = 15
+    Visible = False
   end
   object TcpClient1: TTcpClient
     Left = 480
