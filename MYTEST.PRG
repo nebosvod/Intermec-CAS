@@ -18,6 +18,7 @@
 'Если нажата клавиша "I" - переход на процедуру выгрузки, строка 6158
 'Если нажата клавиша "Setup" - переход на процедуру запроса сброса спецификации, строка 4700
 'Если нажата клавиша "Pause" - переход на процедуру сброса взвешивания последней коробки, строка 7000
+'Если нажата клавиша "Shift + Clear" - переход на процедуру выхода из программы, строка 9000
 119 IF ASC(A$)=4 THEN GOSUB PART
 120 IF ASC(A$)=5 THEN GOSUB OTCHETVIG 
 121 IF ASC(A$)=29 THEN GOSUB REQSBRSP
@@ -27,7 +28,7 @@
 126 IF ASC(A$)=30 THEN GOSUB OTMENAVZ
 127 IF ASC(A$)=3 THEN GOSUB WDATAI
 128 IF ASC(A$)=28 THEN FORMFEED
-'129 IF ASC(A$)=8 THEN GOSUB EN
+129 IF ASC(A$)=136 THEN GOSUB EN
 130 GOTO 100
 200 DISP: 
 201 OPEN "console:" FOR OUTPUT AS 3
@@ -560,6 +561,8 @@
 7030 D$=INKEY$
 7040 IF D$ = "" THEN GOTO 7030
 7050 IF ASC(D$)=13 THEN
+7055 AFN%=AFN%-1
+7056 GOSUB KORZ
 7060 OPEN "table.csv" FOR APPEND AS 23
 7070 OTCH%=OTCH%-1
 7080 PRINT #23,"brak"
