@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 465
-  Top = 206
+  Left = 1107
+  Top = 124
   Width = 692
-  Height = 459
+  Height = 522
   Caption = #1079#1072#1075#1088#1091#1079#1095#1080#1082
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -116,9 +116,42 @@ object Form1: TForm1
     Caption = #1059#1089#1091#1096#1082#1072':'
     Visible = False
   end
+  object Label13: TLabel
+    Left = 16
+    Top = 344
+    Width = 171
+    Height = 13
+    Hint = #1059#1082#1072#1079#1099#1074#1072#1077#1090#1089#1103' '#1058#1059
+    Caption = #1055#1086#1083#1085#1086#1077' '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' (2 '#1089#1090#1088#1086#1082#1072'):'
+    ParentShowHint = False
+    ShowHint = True
+    Visible = False
+  end
+  object Label14: TLabel
+    Left = 16
+    Top = 368
+    Width = 171
+    Height = 13
+    Hint = #1059#1082#1072#1079#1099#1074#1072#1077#1090#1089#1103' '#1084'.'#1076'.'#1078
+    Caption = #1055#1086#1083#1085#1086#1077' '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' (3 '#1089#1090#1088#1086#1082#1072'):'
+    ParentShowHint = False
+    ShowHint = True
+    Visible = False
+  end
+  object Label15: TLabel
+    Left = 16
+    Top = 392
+    Width = 205
+    Height = 13
+    Hint = #1045#1089#1083#1080' '#1087#1086#1083#1077' '#1088#1072#1074#1085#1086' "1" '#1055#1077#1095#1072#1090#1072#1077#1090#1089#1103' '#1058#1059' '#1080' '#1084'.'#1076'.'#1078
+    Caption = #1055#1088#1080#1079#1085#1072#1082' '#1087#1077#1095#1072#1090#1080' '#1087#1086#1083#1085#1086#1075#1086' '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1103':'
+    ParentShowHint = False
+    ShowHint = True
+    Visible = False
+  end
   object Button1: TButton
     Left = 384
-    Top = 352
+    Top = 424
     Width = 153
     Height = 57
     Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100' '#1085#1072' PM4i'
@@ -134,7 +167,7 @@ object Form1: TForm1
   end
   object Button2: TButton
     Left = 144
-    Top = 352
+    Top = 424
     Width = 153
     Height = 57
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1074' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082
@@ -256,6 +289,30 @@ object Form1: TForm1
     Width = 602
     Height = 21
     TabOrder = 15
+    Visible = False
+  end
+  object Edit13: TEdit
+    Left = 191
+    Top = 341
+    Width = 474
+    Height = 21
+    TabOrder = 16
+    Visible = False
+  end
+  object Edit14: TEdit
+    Left = 191
+    Top = 365
+    Width = 474
+    Height = 21
+    TabOrder = 17
+    Visible = False
+  end
+  object Edit15: TEdit
+    Left = 232
+    Top = 389
+    Width = 433
+    Height = 21
+    TabOrder = 18
     Visible = False
   end
   object TcpClient1: TTcpClient

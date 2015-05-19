@@ -37,6 +37,12 @@ type
     Edit11: TEdit;
     Label12: TLabel;
     Edit12: TEdit;
+    Label13: TLabel;
+    Edit13: TEdit;
+    Label14: TLabel;
+    Edit14: TEdit;
+    Edit15: TEdit;
+    Label15: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -94,7 +100,7 @@ TCPClient1.Sendln(kk);
  except
  end;
 //*******************
-  kk:='RUN "LABEL.PRG"';
+  kk:='RUN "ANKOVO.PRG"';
   TCPClient1.Sendln(kk);
   end else//if  TCPClient1.Connected
   showmessage('неверный IP');
@@ -147,8 +153,8 @@ var
 begin
 
 // если файла нет, создадим:
-if (not FileExists('C:\plues.txt')) then  begin
-     AssignFile(f1,'C:\plues.txt');
+if (not FileExists('C:\plues2.txt')) then  begin
+     AssignFile(f1,'C:\plues2.txt');
      rewrite(f1);
      //writeln(f1,'');
      //Добавлялся перенос строки при создании файла, зачем - не понятно
@@ -156,7 +162,7 @@ if (not FileExists('C:\plues.txt')) then  begin
 end;
 
 flag:=0;
-AssignFile(f1,'C:\plues.txt');
+AssignFile(f1,'C:\plues2.txt');
 reset(f1);
 while not eof(f1) do begin
  readln(f1,kk);
@@ -172,7 +178,7 @@ if MessageBox(Form1.Handle, PChar('Товар существует. Заменить?'), '',
 //**************** дописываю **************************
    schet:=strtoint(edit2.Text);
 
-     AssignFile(f1,'C:\plues.txt');
+     AssignFile(f1,'C:\plues2.txt');
      append(f1);
 
      kk:= 'PLUNO='+edit2.Text;
@@ -197,10 +203,16 @@ if MessageBox(Form1.Handle, PChar('Товар существует. Заменить?'), '',
      writeln(f1,kk);
      kk:= 'USUSHKA='+edit12.Text;
      writeln(f1,kk);
+     kk:= 'NAME3='+edit13.Text;
+     writeln(f1,kk);
+     kk:= 'NAME4='+edit14.Text;
+     writeln(f1,kk);
+     kk:= 'FULLNAME='+edit15.Text;
+     writeln(f1,kk);
 
 
      closefile(f1);
-     
+
      schet:=schet+1;
      goto l3;
 //**************** дописал **************************
@@ -208,7 +220,7 @@ if MessageBox(Form1.Handle, PChar('Товар существует. Заменить?'), '',
 
 l2:
 //******* заменяю *****************************************
-    AssignFile(f1,'C:\plues.txt');
+    AssignFile(f1,'C:\plues2.txt');
      AssignFile(f3,'C:\plues1.txt');
      reset(f1);
      rewrite(f3);
@@ -227,8 +239,10 @@ l2:
    writeln(f3,'TOCHNOST='+edit9.text);
    writeln(f3,'OKRUGLENIE='+edit10.text);
    writeln(f3,'USUSHKA='+edit12.text);
+   writeln(f3,'NAME3='+edit13.text);
+   writeln(f3,'NAME4='+edit14.text);
+   writeln(f3,'FULLNAME='+edit15.text);
    //пробегаю старую инфу:
-   readln(f1,kk);
    readln(f1,kk);
    readln(f1,kk);
    readln(f1,kk);
@@ -245,7 +259,7 @@ l2:
  closefile(f1);
  closefile(f3);
  // копируем новый f3 в старый f1 (false - замена будет):
- copyfile('C:\plues1.txt','C:\plues.txt',false);
+ copyfile('C:\plues1.txt','C:\plues2.txt',false);
  deletefile('C:\plues1.txt');
 //******* заменил ************************************************
 
@@ -264,6 +278,9 @@ l3: // выхожу...
      label10.Visible:=false;
      label11.Visible:=false;
      label12.Visible:=false;
+     label13.Visible:=false;
+     label14.Visible:=false;
+     label15.Visible:=false;
 
      edit2.Visible:=false;
      edit3.Visible:=false;
@@ -276,6 +293,9 @@ l3: // выхожу...
      edit10.Visible:=false;
      edit11.Visible:=false;
      edit12.Visible:=false;
+     edit13.Visible:=false;
+     edit14.Visible:=false;
+     edit15.Visible:=false;
 
      button1.Visible:=true;
 
@@ -297,6 +317,9 @@ begin
      label10.Visible:=true;
      label11.Visible:=true;
      label12.Visible:=true;
+     label13.Visible:=true;
+     label14.Visible:=true;
+     label15.Visible:=true;
 
      edit2.Visible:=true;
      edit3.Visible:=true;
@@ -309,6 +332,9 @@ begin
      edit10.Visible:=true;
      edit11.Visible:=true;
      edit12.Visible:=true;
+     edit13.Visible:=true;
+     edit14.Visible:=true;
+     edit15.Visible:=true;
 
      button2.Visible:=true;
      button1.Visible:=false;
@@ -325,6 +351,9 @@ begin
      label10.Visible:=false;
      label11.Visible:=false;
      label12.Visible:=false;
+     label13.Visible:=false;
+     label14.Visible:=false;
+     label15.Visible:=false;
 
      edit2.Visible:=false;
      edit3.Visible:=false;
@@ -337,6 +366,9 @@ begin
      edit10.Visible:=false;
      edit11.Visible:=false;
      edit12.Visible:=false;
+     edit13.Visible:=false;
+     edit14.Visible:=false;
+     edit15.Visible:=false;
 
      button2.Visible:=false;
      button1.Visible:=true;
